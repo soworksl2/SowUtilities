@@ -14,9 +14,15 @@ namespace test
         static void Main(string[] args)
         {
 
-            string x = Cryptography.Encript("Hola", "Hola");
+            Stopwatch x = new Stopwatch();
 
-            Console.WriteLine(Cryptography.Decrypt(x, "Hola"));
+            x.Start();
+
+            Cryptography.DecryptFile(@"C:\Users\jimyw\Desktop\nueva carpeta xd\Prueba encriptado.txt");
+
+            x.Stop();
+
+            Console.WriteLine("Archivo encriptado en : {0} milisegundos", x.ElapsedMilliseconds);
 
             Console.ReadKey();
 

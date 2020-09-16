@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SowUtilities.Security;
 using System.IO;
 using System.Diagnostics;
+using SowUtilities.Serialization;
 
 namespace test
 {
@@ -14,18 +15,7 @@ namespace test
         static void Main(string[] args)
         {
 
-            Stopwatch x = new Stopwatch();
-
-            x.Start();
-
-            Cryptography.DecryptFile(@"C:\Users\jimyw\Desktop\nueva carpeta xd\Prueba encriptado.txt");
-
-            x.Stop();
-
-            Console.WriteLine("Archivo encriptado en : {0} milisegundos", x.ElapsedMilliseconds);
-
-            Console.ReadKey();
-
         }
     }
+
 }

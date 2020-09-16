@@ -7,7 +7,7 @@ namespace SowUtilities.Security
 {
     public static class Cryptography
     {
-        public const int MAX_SIZE_SUPPORT = 10000000;
+        public const int MAX_SIZE_SUPPORT = 20000000;
 
         private const string SIZE_ERROR_MESSAGE = "El archivo es demasiado grande para realizar la operacion";
 

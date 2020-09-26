@@ -7,7 +7,7 @@ namespace SowUtilities.Security
 {
     public static class Cryptography
     {
-        public const int MAX_SIZE_SUPPORT = 20000000;
+        public const int MAX_SIZE_SUPPORTED = 20000000;
 
         private const string SIZE_ERROR_MESSAGE = "El archivo es demasiado grande para realizar la operacion";
 
@@ -19,7 +19,7 @@ namespace SowUtilities.Security
 
             for (int i = 0; i < output.Length; i++)
             {
-                output[i] = i < workKey.Length ? workKey[i] : paddingKey[i];
+                output[i] = (i < workKey.Length) ? workKey[i] : paddingKey[i];
             }
 
             return output;
@@ -97,7 +97,7 @@ namespace SowUtilities.Security
 
         public static void EncryptFile(string path, string key = "[default]", string outPath = "")
         {
-            if (new FileInfo(path).Length > MAX_SIZE_SUPPORT)
+            if (new FileInfo(path).Length > MAX_SIZE_SUPPORTED)
             {
                 throw new Exception(SIZE_ERROR_MESSAGE);
             }
@@ -127,7 +127,7 @@ namespace SowUtilities.Security
 
         public static void DecryptFile(string path, string key = "[default]", string outPath = "")
         {
-            if (new FileInfo(path).Length > MAX_SIZE_SUPPORT)
+            if (new FileInfo(path).Length > MAX_SIZE_SUPPORTED)
             {
                 throw new Exception(SIZE_ERROR_MESSAGE);
             }
